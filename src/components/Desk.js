@@ -7,8 +7,7 @@ class Desk extends Component {
         super(props);
         this.state = {
             num1: '',
-            fn: null,
-            result: false
+            fn: null
         }
         this.renderBut = this.renderBut.bind(this);
         this.calculate = this.calculate.bind(this);
@@ -29,32 +28,32 @@ class Desk extends Component {
         // eslint-disable-next-line default-case
         switch(el) {
             case '+' : {
-                this.setState({num1: '', fn: this.plus.bind(null, JSON.parse(newNum)), result: false});
+                this.setState({num1: '', fn: this.plus.bind(null, JSON.parse(newNum))});
                 break;
             }
             case '-' : {
-                this.setState({num1: '', fn: this.minus.bind(null, JSON.parse(newNum)), result: false});
+                this.setState({num1: '', fn: this.minus.bind(null, JSON.parse(newNum))});
                 break;
             }
             case '*' : {
-                this.setState({num1: '', fn: this.multip.bind(null, JSON.parse(newNum)), result: false});
+                this.setState({num1: '', fn: this.multip.bind(null, JSON.parse(newNum))});
                 break;
             }
             case '/' : {
-                this.setState({num1: '', fn: this.divide.bind(null, JSON.parse(newNum)), result: false});
+                this.setState({num1: '', fn: this.divide.bind(null, JSON.parse(newNum))});
                 break;
             }
             case '+/-' : {
-                this.setState({num1: '-' + newNum, fn: newFn, result: false});
+                this.setState({num1: '-' + newNum, fn: newFn});
                 break;
             }
             case 'A/C' : {
-                this.setState({num1: '' , fn: null, result: false});
+                this.setState({num1: '' , fn: null});
                 break;
             }
             case '=' : {
                 const res = newFn(JSON.parse(newNum));
-                this.setState({num1 : res, fn: null, result : res});
+                this.setState({num1 : res, fn: null});
             }
         }
     };
@@ -81,7 +80,7 @@ class Desk extends Component {
         return (
             <div className = 'Desk'>
                 <div className = 'output'>
-                    <h1>{this.state.result ? this.state.result : this.state.num1}</h1>
+                    <h1>{this.state.num1}</h1>
                 </div>
                 <div className = 'raw'>
                     {this.renderBut('A/C')} {this.renderBut('+/-')} {this.renderBut('%')} {this.renderBut('/')}
