@@ -9,7 +9,6 @@ class Desk extends Component {
             num1: '',
             fn: null
         }
-        this.renderBut = this.renderBut.bind(this);
         this.calculate = this.calculate.bind(this);
     }
 
