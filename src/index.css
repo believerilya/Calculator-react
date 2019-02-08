@@ -1,11 +1,19 @@
 .Desk {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
   width: 100px;
   height: 100px;
+  font-size: 25px;
 }
 
+.output {
+  width: 408px;
+  margin: 0;
+  border: 2px #333 double;
+}
 

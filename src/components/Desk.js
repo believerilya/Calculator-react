@@ -26,6 +26,7 @@ class Desk extends Component {
             this.setState({num1 : newNum , fn: newFn, result : false});
         }
 
+        // eslint-disable-next-line default-case
         switch(el) {
             case '+' : {
                 this.setState({num1: '', fn: this.plus.bind(null, JSON.parse(newNum)), result: false});
@@ -79,20 +80,22 @@ class Desk extends Component {
 
         return (
             <div className = 'Desk'>
-                <h1 className = 'output'>{this.state.result ? this.state.result : this.state.num1}</h1>
+                <div className = 'output'>
+                    <h1>{this.state.result ? this.state.result : this.state.num1}</h1>
+                </div>
                 <div className = 'raw'>
                     {this.renderBut('A/C')} {this.renderBut('+/-')} {this.renderBut('%')} {this.renderBut('/')}
                 </div>
-                <div>
+                <div className = 'raw'>
                     {this.renderBut('7')} {this.renderBut('8')} {this.renderBut('9')} {this.renderBut('*')}
                 </div>
-                <div>
+                <div className = 'raw'>
                     {this.renderBut('4')} {this.renderBut('5')} {this.renderBut('6')} {this.renderBut('-')}
                 </div>
-                <div>
+                <div className = 'raw'>
                     {this.renderBut('1')} {this.renderBut('2')} {this.renderBut('3')} {this.renderBut('+')}
                 </div>
-                <div>
+                <div className = 'raw'>
                     {this.renderBut('0')} {this.renderBut('.')} {this.renderBut('=')}
                 </div>
             </div>
