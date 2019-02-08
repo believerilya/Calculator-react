@@ -53,7 +53,7 @@ class Desk extends Component {
             }
             case '=' : {
                 const res = newFn(JSON.parse(newNum));
-                this.setState({num1 : '', fn: null, result : res});
+                this.setState({num1 : res, fn: null, result : res});
             }
         }
     };
