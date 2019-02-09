@@ -43,7 +43,8 @@ class Desk extends Component {
                 break;
             }
             case '+/-' : {
-                this.setState({num1: '-' + newNum, fn: newFn});
+                newNum.includes('-') ? newNum = newNum.slice(1) : newNum = '-' + newNum;
+                this.setState({num1:  newNum, fn: newFn});
                 break;
             }
             case 'A/C' : {
@@ -73,7 +74,6 @@ class Desk extends Component {
         return a/b;
     }
 
-
     render() {
 
         return (
@@ -93,7 +93,7 @@ class Desk extends Component {
                 <div className = 'raw'>
                     {this.renderBut('1')} {this.renderBut('2')} {this.renderBut('3')} {this.renderBut('+')}
                 </div>
-                <div className = 'raw'>
+                <div className = 'raw4'>
                     {this.renderBut('0')} {this.renderBut('.')} {this.renderBut('=')}
                 </div>
             </div>

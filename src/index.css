@@ -2,7 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  box-shadow: 1px 1px black,
+              5px 5px grey,
+              10px 10px #333;
+  width: 420px;
+  position: fixed;
+  left: 25%;
 }
 
 button {
@@ -16,4 +21,3 @@ button {
   margin: 0;
   border: 2px #333 double;
 }
-
