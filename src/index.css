@@ -20,4 +20,5 @@ button {
   width: 408px;
   margin: 0;
   border: 2px #333 double;
+  text-align: right;
 }
