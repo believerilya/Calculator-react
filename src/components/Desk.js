@@ -42,6 +42,13 @@ class Desk extends Component {
                 this.setState({num1: '', fn: this.divide.bind(null, JSON.parse(newNum))});
                 break;
             }
+            case '%' : {
+                this.setState({
+                    num1: this.per(JSON.parse(newNum)),
+                    fn: null}
+                )     
+                 break;
+            }
             case '+/-' : {
                 newNum.includes('-') ? newNum = newNum.slice(1) : newNum = '-' + newNum;
                 this.setState({num1:  newNum, fn: newFn});
@@ -72,6 +79,10 @@ class Desk extends Component {
 
     divide(a, b) {
         return a/b;
+    }
+
+    per(a) {
+        return a/100;
     }
 
     render() {
