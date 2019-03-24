@@ -1,24 +1,43 @@
-.Desk {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 1px 1px black,
-              5px 5px grey,
-              10px 10px #333;
-  width: 420px;
-  position: fixed;
-  left: 25%;
+body {
+  background: whitesmoke;
+}
+
+.window {
+  text-align: center;
 }
 
 button {
   width: 100px;
   height: 100px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
-.output {
-  width: 408px;
-  margin: 0;
-  border: 2px #333 double;
-  text-align: right;
+button:hover {
+  color: red;
+  font-size: 23px;
+}
+
+.raw1{
+  display: flex;
+  justify-content: center;
+}
+
+.raw2{
+  display: flex;
+  justify-content: center;
+}
+
+.raw3{
+  display: flex;
+  justify-content: center;
+}
+
+.raw4{
+  display: flex;
+  justify-content: center;
+}
+
+.raw5{
+  display: flex;
+  justify-content: center;
 }
