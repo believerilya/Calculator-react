@@ -3,7 +3,21 @@ body {
 }
 
 .window {
-  text-align: center;
+  position: fixed;
+  left: 37%;
+}
+
+.board {
+    display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  box-shadow: 1px 1px black,
+	              5px 5px grey,
+	              10px 10px #333;
+	  width: 420px;
+	  position: fixed;
+    left: 35%;
+    top: 100px;
 }
 
 button {

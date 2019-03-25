@@ -94,12 +94,17 @@ class Calculator extends Component {
 
       case '=' : {
         if (newfn) {
-        const result = newfn(JSON.parse(newnum));
+        const result = newfn(JSON.parse(newnum)).toString();
         this.setState({
           num: result,
           fn: null
         })
         }
+        break;
+      }
+
+      case ' ' : {
+
         break;
       }
 
