@@ -5,7 +5,7 @@ class Board extends Component {
 
   render() {
     return (
-      <div className = 'Board'>
+      <div className = 'board'>
         <Raw arr = {['A/C', '+/-', '%', '/']} cls = 'raw1' handleClick = {this.props.handleClick}/>
         <Raw arr = {['7', '8', '9', '*']} cls = 'raw2' handleClick = {this.props.handleClick}/>
         <Raw arr = {['4', '5', '6', '-']} cls = 'raw3' handleClick = {this.props.handleClick}/>
