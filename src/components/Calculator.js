@@ -20,7 +20,7 @@ class Calculator extends Component {
     let newnum = this.state.num;
     let newfn = this.state.fn;
 
-    if (['1','2','3','4','5','6','7','8','9','0','.'].includes(val)) {
+    if (/\d/.test(val)) {
       newnum += val;
       this.setState({
         num: newnum, 
@@ -33,7 +33,7 @@ class Calculator extends Component {
       case '+' : {
         this.setState({
           num: '',
-          fn: plus.bind(null, JSON.parse(newnum))
+          fn: this.plus.bind(null, JSON.parse(newnum))
         })
         break;
       }
@@ -41,7 +41,7 @@ class Calculator extends Component {
       case '-' : {
         this.setState({
           num: '',
-          fn: minus.bind(null, JSON.parse(newnum))
+          fn: this.minus.bind(null, JSON.parse(newnum))
         })
         break;
       }
@@ -49,7 +49,7 @@ class Calculator extends Component {
       case '*' : {
         this.setState({
           num: '',
-          fn: multiply.bind(null, JSON.parse(newnum))
+          fn: this.multiply.bind(null, JSON.parse(newnum))
         })
         break;
       }
@@ -57,7 +57,7 @@ class Calculator extends Component {
       case '/' : {
         this.setState({
           num: '',
-          fn: divide.bind(null, JSON.parse(newnum))
+          fn: this.divide.bind(null, JSON.parse(newnum))
         })
         break;
       }
@@ -65,7 +65,7 @@ class Calculator extends Component {
       case '%' : {
         
         this.setState({
-          num: percent(JSON.parse(newnum)),
+          num: this.percent(JSON.parse(newnum)),
           fn: null
         })
         break;
@@ -104,7 +104,7 @@ class Calculator extends Component {
       }
 
       case ' ' : {
-
+        alert('Subscribe on my github account');
         break;
       }
 
@@ -113,6 +113,12 @@ class Calculator extends Component {
       }
     }
   }
+
+  plus = (a, b) => a + b;
+  minus = (a, b) => a - b;
+  divide = (a, b) => a/b;
+  multiply = (a, b) => a * b;
+  percent = (a) => a/100;
 
   render() {
     return (
@@ -124,9 +130,4 @@ class Calculator extends Component {
   }
 }
 
-const plus = (a, b) => a + b;
-const minus = (a, b) => a - b;
-const divide = (a, b) => a/b;
-const multiply = (a, b) => a * b;
-const percent = (a) => a/100;
 export default Calculator
